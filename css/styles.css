@@ -19,7 +19,7 @@ main {
   align-items: center;
   background: #fff url("../images/bg-main-desktop.png") no-repeat top left/30% 100%;
   display: flex;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   margin: auto;
   max-width: 1440px;
@@ -38,16 +38,20 @@ main #front-back-card {
 
 /* Front Card */
 #card-front {
-  align-self: flex-start;
+  align-content: center;
   background: url("../images/bg-card-front.png") no-repeat center/cover;
   border-radius: 15px;
   display: grid;
   gap: 0;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 100px 1fr;
   grid-template-rows: repeat(3, 1fr);
   min-height: 245px;
-  padding: 1rem;
+  text-align: center;
   width: 447px;
+}
+
+#card-front img {
+  padding: 1rem;
 }
 
 #card-number {
@@ -86,10 +90,24 @@ main #front-back-card {
 form {
   display: flex;
   flex-flow: column;
+  max-width: 500px;
+}
+
+input {
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 10px;
+  color: hsl(270, 3%, 87%);
+  margin: .5rem;
+  padding: .5rem;
+  width: 100%;
 }
 
 /* Utility Classes */
 .card {
   color: #fff;
   margin: .5rem 2rem;
+}
+
+.container {
+  display: flex;
 }
