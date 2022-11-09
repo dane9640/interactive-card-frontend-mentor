@@ -17,10 +17,10 @@ body {
 
 main {
   align-items: center;
-  background: #fff url("../images/bg-main-desktop.png") no-repeat top left/30% 100%;
+  background: #fff url("../images/bg-main-desktop.png") no-repeat top left/35% 100%;
   display: flex;
-  height: 100%;
-  justify-content: center;
+  height: 100vh;
+  justify-content: space-around;
   margin: auto;
   max-width: 1440px;
 }
@@ -33,7 +33,6 @@ h2 {
 main #front-back-card {
   display: flex;
   flex-flow: column;
-  margin: 3rem;
 }
 
 /* Front Card */
@@ -75,6 +74,7 @@ main #front-back-card {
 #card-back {
   align-self: flex-end;
   background: url("../images/bg-card-back.png") no-repeat center/cover;
+  margin-left: 6rem;
   min-width: 447px;
   min-height: 245px;
   position: relative;
@@ -88,18 +88,50 @@ main #front-back-card {
 
 /* Form Styling */
 form {
-  display: flex;
-  flex-flow: column;
-  max-width: 500px;
+  color: hsl(278, 68%, 11%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(7, auto);
+  margin: 1rem 0;
+  max-width: 350px;
+  padding-right: 2rem;
 }
 
 input {
   border: 1px solid hsl(270, 3%, 87%);
   border-radius: 10px;
   color: hsl(270, 3%, 87%);
-  margin: .5rem;
-  padding: .5rem;
+  margin: .5rem 0;
+  padding: 1rem;
   width: 100%;
+}
+
+input[type="text"]:focus {
+  color: hsl(278, 68%, 11%);
+}
+
+input[type="submit"] {
+  background-color: hsl(278, 68%, 11%);
+  font-size: 18px;
+}
+
+label {
+  align-self: end;
+}
+
+label[for="expiryForm"] {
+  grid-column: 1/3;
+}
+
+#expiryMonth,
+#expiryDay {
+ width: 85%; 
+ justify-self: start;
+}
+
+label[for="cvcNumber"] {
+  grid-column: 3/-1;
+  grid-row: 5/5;
 }
 
 /* Utility Classes */
@@ -110,4 +142,8 @@ input {
 
 .container {
   display: flex;
+}
+
+.grid-column-span {
+  grid-column: 1/-1;
 }
